@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: url(images/bg2.jpg);
+    background-size: cover;
+
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper h1 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    justify-content: center;
+}
+
+.wrapper h1 img {
+    width: 2.1rem;
+    margin-left: 0.6rem;
+}
+
+.task-input {
+    height: 3.2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgb(0 0 0 / 60%), rgb(67 67 67 / 60%));
+    border-radius: 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 2px 2px 10px #000000;
+}
+
+.todo-list {
+    padding: 2.5rem 1.8rem 2.5rem;
+    width: 100%;
+    max-width: 40rem;
+    background: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6));
+    border-radius: 0.6rem;
+}
+
+.task-input img {
+    position: absolute;
+    top: 50%;
+    transform: translate(1.1rem, -50%);
+}
+
+.task-input input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 1.8rem;
+    border: none;
+    color: #fff;
+    padding: 0.6rem;
+    background: transparent;
+}
+
+.controls,
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controls {
+    padding-bottom: 1.3rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.filters span {
+    cursor: pointer;
+    padding: 0.5rem 1.8rem;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.filters span:first-child {
+    margin-left: 0;
+}
+
+.filters span.active {
+    background: #2d69eb;
+    box-shadow: 2px 2px 5px #2d69eb;
+    border-radius: 6px;
+}
+
+.controls .clear-btn {
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    padding: 0.5rem 1.8rem;
+    background: #2d69eb;
+}
+
+.task-box {
+    margin-top: 0.9rem;
+}
+
+.task-box .task {
+    list-style: none;
+    font-size: 1rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 1rem;
+}
+
+.task-box .task:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.task-box span {
+    color: #fff;
+}
+
+.task label {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.task label p {
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding-right: 0.4rem;
+}
+
+.task label p.checked {
+    text-decoration: line-through;
+    color: #555;
+}
+
+.task label input {
+    margin-right: 0.75rem;
+    border-radius: 3.1rem;
+    cursor: pointer;
+}
+
+.task .settings {
+    cursor: pointer;
+    position: relative;
+}
+
+.fa-solid {
+    color: #fff;
+}
+
+.settings .task-menu {
+    position: absolute;
+    padding: 0.3rem 0;
+    right: -0.3rem;
+    bottom: -4rem;
+    z-index: 2;
+    transform: scale(0);
+    border-radius: 5px;
+    background: #fff;
+    transform-origin: top right;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.settings .task-menu.show {
+    transform: scale(1);
+}
+
+.task-menu li {
+    height: 1.5rem;
+    font-size: 1rem;
+    padding: 1rem 1rem;
+    margin-bottom: 0.1rem;
+    justify-content: flex-start;
+}
+
+.task-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.task-menu li:hover {
+    background: #f5f5f5;
+}
+
+.task-menu li i {
+    padding-right: 0.5rem;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 0.5rem 1.8rem;
+    background: #2d69eb;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 2.5rem;
+    box-shadow: 2px 2px 5px #8d8d8d;
+}
+
+@media only screen and (max-width: 535px) {
+    .filters span{
+        padding: 0.5rem 0.7rem;
+    }
+    .controls .clear-btn{
+        padding: 0.5rem 0.7rem;
+    }
+    button{
+        padding: 0.5rem 1rem;
+    }
+}
+@media only screen and (max-width: 400px){
+    .filters span{
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    .controls .clear-btn{
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    .task-input {
+        height: 2.8rem;
+    }
+    .task label p {
+        font-size: 0.9rem;
+    }
+    .task-menu li {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+}
+@media only screen and (max-width: 340px){
+    .filters span{
+        padding: 0.3rem 0.5rem;
+        font-size: 0.6rem;
+    }
+    .controls .clear-btn{
+        padding: 0.3rem 0.5rem;
+        font-size: 0.6rem;
+    }
+    .task-input {
+        height: 2.3rem;
+    }
+    button{
+        padding: 0.5rem 1rem;
+        font-size: 0.6rem;
+    }
+    .task-input input::placeholder{
+        font-size: 0.8rem;
+    }
+    .task label p {
+        font-size: 0.7rem;
+    }
+    .task-menu li {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.6rem;
+    }
+}

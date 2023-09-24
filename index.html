@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>To do list</title>
-    <link rel="stylesheet" href="app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="todo-app">
+    <div class="wrapper">
+        <div class="todo-list">
             <h1>To-Do List <img src="images/icon.png" alt=""></h1>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="Add your text">
+            <div class="task-input">
+                <input type="text" placeholder="Add a new task">
                 <button onclick="addTask()">Add</button>
             </div>
-            <ul id="list-container">
-                <!-- <li class="checked">Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li> -->
+            <div class="controls">
+                <div class="filters">
+                    <span id="all" class="active">All</span>
+                    <span id="pending">Pending</span>
+                    <span id="completed">Completed</span>
+                </div>
+                <button class="clear-btn">Clear All</button>
+            </div>
+            <ul class="task-box">
+                <!-- <li class="task">
+                <label for="1">
+                    <input type="checkbox" id="1">
+                    <p>go to gym</p>
+                </label>
+                <div class="settings">
+                    <i class="fa-solid fa-ellipsis"></i>
+                    <ul class="task-menu">
+                        <li><i class="fa-solid fa-pen"></i>Edit</li>
+                        <li><i class="fa-solid fa-trash"></i>Delete</li>
+                    </ul>
+                </div>
+            </li> -->
             </ul>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
