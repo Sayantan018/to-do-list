@@ -1,6 +1,7 @@
 const taskInput = document.querySelector(".task-input input");
 filters = document.querySelectorAll(".filters span");
-clearAll = document.querySelector(".clear-btn");
+const clearAll = document.querySelector(".clear-btn");
+// confirmBtn = document.querySelector(".confirm-btn");
 taskBox = document.querySelector(".task-box");
 
 const addButton = document.querySelector(".task-input button");
@@ -41,11 +42,10 @@ function showTodo(filter) {
             }
         });
     }
-
     taskBox.innerHTML = li || `<span>You don't have any task here</span>`;
 }
-showTodo("all");
 
+showTodo("all");
 function showMenu(selectedTask) {
     //getting task menu div
     let taskMenu = selectedTask.parentElement.lastElementChild;
@@ -72,11 +72,31 @@ function deleteTask(deleteId) {
 }
 
 clearAll.addEventListener("click", () => {
-    // removing all item
-    todos.splice(0, todos.length);
-    saveData();
-    showTodo("all");
-})
+    // Show the confirmation dialog when the "Clear All" button is clicked
+    const confirmDialog = document.querySelector('.confirm');
+    confirmDialog.style.display = 'block';
+    
+});
+
+function confirmBtn() {
+    const confirmBtn = document.querySelector(".confirm-btn");
+    confirmBtn.addEventListener("click", () => {
+        // Clear all tasks when the confirmation "Yes" button is clicked
+        todos = []; // Clear all tasks
+        saveData(); // Save the empty list
+        showTodo("all"); // Refresh the task list
+        // Hide the confirmation dialog
+        const confirmDialog = document.querySelector('.confirm');
+        confirmDialog.style.display = 'none';
+    });
+}
+
+function cancelClear() {
+    // Hide the confirmation dialog when "No" is clicked
+    const confirmDialog = document.querySelector('.confirm');
+    confirmDialog.style.display = 'none';
+}
+
 function updateStatus(selectedTask) {
     // getting paragraph that contains task name
     let taskName = selectedTask.parentElement.lastElementChild;

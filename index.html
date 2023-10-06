@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>to do list</title>
 </head>
 
 <body>
@@ -25,7 +25,14 @@
                     <span id="pending">Pending</span>
                     <span id="completed">Completed</span>
                 </div>
-                <button class="clear-btn">Clear All</button>
+                <button class="clear-btn" onclick="confirmBtn()">Clear All</button>
+                <div class="confirm" style="display: none;">
+                    <h3>Are you sure?</h3>
+                    <div class="btn2">
+                        <button onclick="cancelClear()">No</button>
+                        <button class="confirm-btn" onclick="confirmBtn()">Yes</button>
+                    </div>
+                </div>
             </div>
             <ul class="task-box">
                 <!-- <li class="task">
