@@ -75,7 +75,7 @@ clearAll.addEventListener("click", () => {
     // Show the confirmation dialog when the "Clear All" button is clicked
     const confirmDialog = document.querySelector('.confirm');
     confirmDialog.style.display = 'block';
-    
+
 });
 
 function confirmBtn() {
