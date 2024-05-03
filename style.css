@@ -223,7 +223,15 @@ li {
 .task-menu li i {
     padding-right: 0.5rem;
 }
-
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 108px;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+    color: #fff;
+  }
 button {
     border: none;
     outline: none;
@@ -242,6 +250,12 @@ button {
     .controls .clear-btn{
         padding: 0.5rem 0.7rem;
     }
+    .copyright {
+        padding: 25px 22px;
+      }
+      .copyright p,a {
+        font-size: 13px;
+      }
     button{
         padding: 0.5rem 1rem;
     }
